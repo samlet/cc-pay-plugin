@@ -25,7 +25,30 @@ under the License.
     <!-- ========================================================= -->
     <title>Entity of Cc-pay Component</title>
     <description>None</description>
-    <copyright></copyright>
-    <version></version>
+    <copyright>bluecc.inc</copyright>
+    <version>0.1</version>
 
+    <entity entity-name="CcRule"
+            package-name="com.bluecc.pay.rules"
+            title="Bluecc Rule Entity">
+        <field name="ruleId" type="id"><description>Rule Id</description></field>
+        <field name="name" type="id-vlong"><description>Rule Name</description></field>
+        <field name="description" type="description"></field>
+        <field name="priority" type="integer"></field>
+        <field name="condition" type="very-long"></field>
+        <prim-key field="ruleId"/>
+    </entity>
+
+    <entity entity-name="CcRuleAction"
+            package-name="com.bluecc.pay.rules"
+            title="Bluecc Rule Action Entity">
+        <field name="ruleActionId" type="id"><description>primary sequenced ID</description></field>
+        <field name="description" type="description"></field>
+        <field name="action" type="very-long"></field>
+        <field name="ruleId" type="id"></field>
+        <prim-key field="ruleActionId"/>
+        <relation type="one" fk-name="EXRA_RULE" rel-entity-name="CcRule">
+            <key-map field-name="ruleId"/>
+        </relation>
+    </entity>
 </entitymodel>

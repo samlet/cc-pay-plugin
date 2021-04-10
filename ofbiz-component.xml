@@ -50,4 +50,12 @@ under the License.
         location="webapp/cc-pay"
         base-permission="OFBTOOLS,CC-PAY"
         mount-point="/cc-pay"/>
+
+    <container name="cc-pay" loaders="main" class="com.bluecc.pay.SimpleSrv">
+        <property name="bound-name" value="CcPay"/>
+        <property name="bound-host" value="0.0.0.0"/>
+        <property name="bound-port" value="50051"/>
+        <property name="delegator-name" value="default"/>
+    </container>
+
 </ofbiz-component>

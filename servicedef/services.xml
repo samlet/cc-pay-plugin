@@ -30,5 +30,19 @@ under the License.
         <attribute name="sourceName" type="String" mode="IN" optional="false"/>
         <attribute name="resources" type="List" mode="OUT" optional="false"/>
     </service>
-    
+
+    <service name="createRule" default-entity-name="CcRule" engine="entity-auto" invoke="create" auth="true">
+        <description>Create a Rule</description>
+        <auto-attributes include="pk" mode="OUT" optional="false"/>
+        <auto-attributes include="nonpk" mode="IN" optional="true"/>
+        <override name="name" optional="false"/>
+        <override name="description" optional="false"/>
+        <override name="condition" optional="false" allow-html="any"/>
+        <override name="priority" optional="true" default-value="1"/>
+    </service>
+
+    <service name="deleteRule" default-entity-name="CcRule" engine="entity-auto" invoke="delete" auth="true">
+        <description>Delete a Rule</description>
+        <auto-attributes include="pk" mode="IN" optional="false"/>
+    </service>
 </services>
