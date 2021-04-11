@@ -48,11 +48,11 @@ under the License.
         title="Cc-pay"
         server="default-server"
         location="webapp/cc-pay"
-        base-permission="OFBTOOLS,CC-PAY"
+        base-permission="OFBTOOLS,CC_PAY"
         mount-point="/cc-pay"/>
 
-    <container name="cc-pay" loaders="main" class="com.bluecc.pay.SimpleSrv">
-        <property name="bound-name" value="CcPay"/>
+    <container name="cc-pay" loaders="main" class="com.bluecc.pay.SrvRoutines">
+        <property name="bound-name" value="Routines"/>
         <property name="bound-host" value="0.0.0.0"/>
         <property name="bound-port" value="50051"/>
         <property name="delegator-name" value="default"/>

@@ -50,7 +50,7 @@ under the License.
                     <decorator-section name="body">
                         <section>
                             <condition>
-                                <if-has-permission permission="CC-PAY" action="_VIEW"/>
+                                <if-has-permission permission="CC_PAY" action="_VIEW"/>
                             </condition>
                             <widgets>
                                 <decorator-section-include name="body"/>
