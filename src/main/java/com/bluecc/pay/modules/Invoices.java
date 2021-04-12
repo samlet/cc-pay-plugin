@@ -13,6 +13,7 @@ import org.apache.ofbiz.service.GenericServiceException;
 import org.apache.ofbiz.service.LocalDispatcher;
 
 import javax.validation.constraints.NotNull;
+import javax.ws.rs.Path;
 import javax.ws.rs.QueryParam;
 import java.math.BigDecimal;
 import java.util.List;
@@ -23,12 +24,14 @@ public class Invoices extends ExportService {
         super(dispatcher, delegator);
     }
 
+    @Path("getInvoiceTotal")
     public BigDecimal getInvoiceTotal(@QueryParam("invoiceId") String invoiceId) throws GenericEntityException {
-        GenericValue invoice =  EntityQuery.use(delegator).from("Invoice")
+        GenericValue invoice = EntityQuery.use(delegator).from("Invoice")
                 .where("invoiceId", invoiceId).queryOne();
         return InvoiceWorker.getInvoiceTotal(invoice);
     }
 
+    @Path("getInvoiceItems")
     public List<GenericValue> getInvoiceItems(@QueryParam("invoiceId") String invoiceId) throws GenericEntityException {
         return from("InvoiceItem")
                 .where("invoiceId", invoiceId)
@@ -36,11 +39,15 @@ public class Invoices extends ExportService {
     }
 
     @NotNull
-    public List<GenericValue> currentCustomTimePeriods(GenericValue caller, String organizationPartyId) throws GenericServiceException, ServiceFail {
+    @Path("currentCustomTimePeriods")
+    public List<GenericValue> currentCustomTimePeriods(
+            @QueryParam("caller") GenericValue caller,
+            @QueryParam("organizationPartyId") String organizationPartyId)
+            throws GenericServiceException, ServiceFail {
         Map<String, Object> serviceResult = dispatcher.runSync("findCustomTimePeriods",
                 UtilMisc.toMap("organizationPartyId", organizationPartyId,
-                "findDate", UtilDateTime.nowTimestamp(),
-                "userLogin", caller));
+                        "findDate", UtilDateTime.nowTimestamp(),
+                        "userLogin", caller));
         checkResult("findCustomTimePeriods", serviceResult);
         return ensureValueList(serviceResult, "customTimePeriodList");
     }

@@ -28,6 +28,7 @@ dependencies {
     pluginLibsCompile "javax.xml.bind:jaxb-api:2.3.1"
     // need this for JsonFormat
     pluginLibsCompile "com.google.protobuf:protobuf-java-util:${protobufVersion}"
+    pluginLibsCompile 'org.reflections:reflections:0.9.12'
 
     pluginLibsRuntime "io.grpc:grpc-netty-shaded:${grpcVersion}"
 

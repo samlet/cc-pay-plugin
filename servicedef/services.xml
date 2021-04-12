@@ -31,6 +31,13 @@ under the License.
         <attribute name="resources" type="List" mode="OUT" optional="false"/>
     </service>
 
+    <service name="retrieveMeta" engine="java" auth="true"
+             location="com.bluecc.pay.MetaManager" invoke="retrieveMeta">
+        <description>Retrieve Services Meta</description>
+        <attribute name="packageName" type="String" mode="IN" optional="false"/>
+        <attribute name="metas" type="List" mode="OUT" optional="false"/>
+    </service>
+
     <service name="createRule" default-entity-name="CcRule" engine="entity-auto" invoke="create" auth="true">
         <description>Create a Rule</description>
         <auto-attributes include="pk" mode="OUT" optional="false"/>
@@ -45,4 +52,5 @@ under the License.
         <description>Delete a Rule</description>
         <auto-attributes include="pk" mode="IN" optional="false"/>
     </service>
+
 </services>
