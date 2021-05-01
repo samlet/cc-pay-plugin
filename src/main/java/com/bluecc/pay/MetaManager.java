@@ -1,6 +1,5 @@
 package com.bluecc.pay;
 
-import com.bluecc.api.MetaPackage;
 import org.apache.ofbiz.service.DispatchContext;
 import org.apache.ofbiz.service.GenericServiceException;
 import org.apache.ofbiz.service.ServiceUtil;

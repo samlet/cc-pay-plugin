@@ -1,6 +1,5 @@
 package com.bluecc.pay;
 
-import com.bluecc.api.MetaPackage;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.junit.Test;
 
