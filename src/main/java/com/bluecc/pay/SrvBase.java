@@ -32,12 +32,13 @@ public abstract class SrvBase implements Container {
         this.containerName = name;
         this.configFile = configFile;
 
-        initComps();
-    }
-
-    protected void initComps() throws ContainerException {
         // get the container config
         ContainerConfig.Configuration cfg = ContainerConfig.getConfiguration(containerName);
+        initComps(cfg);
+    }
+
+    protected void initComps(ContainerConfig.Configuration cfg) throws ContainerException {
+
         ContainerConfig.Configuration.Property lookupHostProp = cfg.getProperty("bound-host");
         ContainerConfig.Configuration.Property lookupPortProp = cfg.getProperty("bound-port");
         this.delegatorProp = cfg.getProperty("delegator-name");

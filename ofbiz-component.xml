@@ -54,7 +54,7 @@ under the License.
     <container name="cc-pay" loaders="main" class="com.bluecc.pay.SrvRoutines">
         <property name="bound-name" value="Routines"/>
         <property name="bound-host" value="0.0.0.0"/>
-        <property name="bound-port" value="50051"/>
+        <property name="bound-port" value="50058"/>
         <property name="delegator-name" value="default"/>
     </container>
 
