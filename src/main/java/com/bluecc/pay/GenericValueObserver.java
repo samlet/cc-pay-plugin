@@ -1,6 +1,5 @@
 package com.bluecc.pay;
 
-import com.bluecc.packer.EntityConverter;
 import com.bluecc.packer.routines.ValueObject;
 import io.grpc.stub.StreamObserver;
 import org.apache.ofbiz.entity.GenericValue;

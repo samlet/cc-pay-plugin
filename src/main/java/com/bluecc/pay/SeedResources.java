@@ -1,10 +1,10 @@
 package com.bluecc.pay;
 
+import com.bluecc.pay.dummy.RouteGuideUtil;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.protobuf.util.JsonFormat;
 import io.grpc.examples.routeguide.Feature;
-import io.grpc.examples.routeguide.RouteGuideUtil;
 import org.apache.ofbiz.service.DispatchContext;
 import org.apache.ofbiz.service.GenericServiceException;
 import org.apache.ofbiz.service.ServiceUtil;

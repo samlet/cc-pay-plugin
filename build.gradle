@@ -17,21 +17,19 @@
  * under the License.
  */
 
-def grpcVersion = '1.37.0' // CURRENT_GRPC_VERSION
-def protobufVersion = '3.12.0'
-def protocVersion = protobufVersion
-
 dependencies {
-    pluginLibsCompile "io.grpc:grpc-protobuf:${grpcVersion}"
-    pluginLibsCompile "io.grpc:grpc-stub:${grpcVersion}"
     pluginLibsCompile "io.jsonwebtoken:jjwt:0.9.1"
-    pluginLibsCompile "javax.xml.bind:jaxb-api:2.3.1"
+
+    // pluginLibsCompile "io.grpc:grpc-protobuf:${grpcVersion}"
+    // pluginLibsCompile "io.grpc:grpc-stub:${grpcVersion}"    
+    // pluginLibsCompile "javax.xml.bind:jaxb-api:2.3.1"
     // need this for JsonFormat
-    pluginLibsCompile "com.google.protobuf:protobuf-java-util:${protobufVersion}"
-    pluginLibsCompile 'org.reflections:reflections:0.9.12'
+    // pluginLibsCompile "com.google.protobuf:protobuf-java-util:${protobufVersion}"
+    // pluginLibsRuntime "io.grpc:grpc-netty-shaded:${grpcVersion}"
 
-    pluginLibsRuntime "io.grpc:grpc-netty-shaded:${grpcVersion}"
 
+    // com.bluecc:common:1.0-SNAPSHOT
+    // pluginLibsCompile 'com.bluecc:common:1.0-SNAPSHOT'
     //pluginLibsCompile 'junit:junit-dep:4.10'
     //pluginLibsRuntime 'junit:junit-dep:4.10'
 }

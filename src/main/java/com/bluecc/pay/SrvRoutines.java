@@ -1,5 +1,6 @@
 package com.bluecc.pay;
 
+import com.bluecc.generic.SrvBase;
 import com.bluecc.packer.routines.ConfigItem;
 import com.bluecc.packer.routines.RoutinesGrpc;
 import com.bluecc.packer.routines.StringValue;

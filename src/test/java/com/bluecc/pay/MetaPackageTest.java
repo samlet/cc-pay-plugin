@@ -3,7 +3,7 @@ package com.bluecc.pay;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.junit.Test;
 
-import static com.bluecc.api.JsonUtil.pretty;
+import static com.bluecc.pay.JsonUtil.pretty;
 
 public class MetaPackageTest {
 
@@ -13,3 +13,4 @@ public class MetaPackageTest {
         System.out.println(pretty(pkg.getClasses()));
     }
 }
+
